@@ -7,5 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-product1 = Product.new(name: "Xbox", price: 400, image_url: "https://compass-ssl.xbox.com/assets/83/53/83534a33-0998-43dc-915a-4ec0a686d679.jpg?n=10202018_Panes-3-up-1400_Hero-SX_570x570.jpg", description: "gaming console")
-product1.save
+product = Product.create(name: "Xbox", price: 400, image_url: "https://compass-ssl.xbox.com/assets/83/53/83534a33-0998-43dc-915a-4ec0a686d679.jpg?n=10202018_Panes-3-up-1400_Hero-SX_570x570.jpg", description: "gaming console")
+
+product = Product.create(name: "Call of Duty", price: 50, image_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ps5-1-1591910417.jpg?crop=1.00xw:0.907xh;0,0&resize=1200:*", descrption: "video game")
