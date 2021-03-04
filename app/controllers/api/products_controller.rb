@@ -12,15 +12,19 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
-  # def create
-  #   @product = Product.new(
-  #     name: params[:the_name],
-  #     price: params[:the_price]
-      
-  #   )
-  #   @product.save
-  #   render "show.json.jb"
-  # end
+  def create
+    @product = Product.new(
+      name: params[:name],
+      price: params[:price],
+      image_url: params[:image_url],
+      description: params[:description],
+    )
+    if @product.save
+      render "show.json.jb"
+    else
+      render json: {message: @product.errors.full_messages}
+    end
+  end
 
   def update 
     @product = Product.find_by(id: params[:id])
@@ -30,4 +34,9 @@ class Api::ProductsController < ApplicationController
     @product.save
     render "show.json.jb"
   end
+
+  def delete
+
+  end
+  
 end
