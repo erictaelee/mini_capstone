@@ -1,6 +1,15 @@
 class Api::ProductsController < ApplicationController
   def index
-    @product = Product.all
+
+# Change your products index action to make the sort, filter, and search buttons work in the new version of the frontend:
+
+    # if params[:sort]
+    #   @index = Product.where("price LIKE ?", "%#{params[:sort]}"
+    # else
+      @products = Product.all
+    # end
+
+    
     render "index.json.jb"
    
   end
@@ -35,8 +44,11 @@ class Api::ProductsController < ApplicationController
     render "show.json.jb"
   end
 
-  def delete
-
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+    render json: {message: "product has been deleted"}
+    
   end
   
 end
