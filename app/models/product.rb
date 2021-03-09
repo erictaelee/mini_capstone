@@ -5,6 +5,9 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :price, numericality: { greater_than: 0 }
 
+  # belongs_to: 
+  # has_many: 
+
   def supplier
     Supplier.find_by(id: supplier_id)
   end
@@ -25,4 +28,14 @@ class Product < ApplicationRecord
   def total
     tax + price
   end
+
+  def image1
+
+  end
+
+  def image2
+
+  end
+
+
 end

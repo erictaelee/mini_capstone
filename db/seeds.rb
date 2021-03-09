@@ -19,3 +19,10 @@ product = Product.create(name: "AirPods", price: 200, image_url: "https://ss7.vz
 
 product = Product.create(name: "Fender Stratocaster", price: 800, image_url: "https://www.stars-music.com/medias/fender/strat-player-mex-sss-pf-hd-146087.jpg", description: "Electric Guitar")
 
+products_with_image = Product.all
+
+prdocuts_with_image.each do |product|
+  image = Image.new(url: product.image_url, product_id: product.id)
+  image.save
+  
+end
