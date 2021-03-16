@@ -1,0 +1,8 @@
+{
+  id: @cp.id,
+  user_id: @cp.user_id,
+  product_id: @cp.product_id,
+  quantity: @cp.quantity,
+  status: @cp.status,
+  order_id: @cp.order_id,
+}
