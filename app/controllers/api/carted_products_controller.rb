@@ -6,7 +6,7 @@ class Api::CartedProductsController < ApplicationController
       quantity: params[:quantity],
       status: "Carted"
     )
-    @cp.save
+    @cp.save!
     render "show.json.jb"
   end
 end

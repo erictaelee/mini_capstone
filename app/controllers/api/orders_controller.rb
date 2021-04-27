@@ -6,7 +6,7 @@ class Api::OrdersController < ApplicationController
   end
   
   def create
-    if current_user
+    if current_user 
       @order = Order.new(
       user_id: current_user.id, 
       product_id: params[:product_id],
@@ -15,6 +15,7 @@ class Api::OrdersController < ApplicationController
       # tax: params[:tax],
       # total: "(#{subtotal} + #{tax}) * "
       )
+      @order.save!
       render "show.json.jb"
     else
       render json: {message: "you can't do that"}
